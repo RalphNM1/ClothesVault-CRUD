@@ -1,0 +1,16 @@
+controlador\factory\HibernateUtil.class
+modelo\dao\productoDAO.class
+vista\CRUDProducto$2.class
+modelo\vo\Producto.class
+vista\vistaCRUD$1.class
+modelo\dao\Dao.class
+modelo\dao\categoriaDAO.class
+vista\CRUDProducto$1.class
+vista\vistaCRUD.class
+modelo\vo\Categoria.class
+com\mycompany\crudclothesvault\CRUDClothesVault.class
+vista\CRUDProducto.class
+controlador\controlador.class
+vista\vistaCRUD$2.class
+modelo\dao\proveedorDAO.class
+modelo\vo\Proveedor.class

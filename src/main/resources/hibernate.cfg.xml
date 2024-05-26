@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://192.168.1.133:3306/ClothesVault?zeroDateTimeBehavior=CONVERT_TO_NULL</property>
+        <property name="hibernate.connection.username">ralphy</property>
+        <property name="hibernate.connection.password">ralphy</property>
+        <property name="hibernate.default_schema">ClothesVault</property>
+        <property name="hibernate.connection.autocommit">false</property>
+        <property name="hibernate.current_session_context_class">thread</property> 
+        <property name="hibernate.show_sql">true</property>
+       <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- Mapping class-->
+        <!--<mapping class="modelo.vo.********"/>-->
+        <mapping class="modelo.vo.Producto"/>
+        <mapping class="modelo.vo.Proveedor"/>
+        <mapping class="modelo.vo.Categoria"/>
+    </session-factory>	
+</hibernate-configuration>
+
+
+        
