@@ -456,6 +456,7 @@ public class CRUDProducto extends javax.swing.JDialog {
 
     public JComboBox<Proveedor> getCmbProveedores() {
         return cmbProveedores;
+        
     }
 
     public void setCmbProveedores(JComboBox<Proveedor> cmbProveedores) {
