@@ -4,13 +4,17 @@ vista\CRUDProducto$2.class
 modelo\vo\Producto.class
 vista\vistaCRUD$1.class
 modelo\dao\Dao.class
+vista\CRUDProducto$4.class
 modelo\dao\categoriaDAO.class
 vista\CRUDProducto$1.class
 vista\vistaCRUD.class
+vista\CRUDProducto$3.class
+vista\CRUDProducto$6.class
 modelo\vo\Categoria.class
 com\mycompany\crudclothesvault\CRUDClothesVault.class
 vista\CRUDProducto.class
 controlador\controlador.class
+vista\CRUDProducto$5.class
 vista\vistaCRUD$2.class
 modelo\dao\proveedorDAO.class
 modelo\vo\Proveedor.class

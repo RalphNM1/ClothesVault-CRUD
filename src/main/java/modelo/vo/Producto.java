@@ -24,9 +24,6 @@ public class Producto implements Serializable {
     @Column(name = "nombre", length = 255)
     private String nombre;
 
-    @Column(name = "marca", length = 100)
-    private String marca;
-
     @Column(name = "talla", length = 10)
     private String talla;
 
@@ -39,25 +36,28 @@ public class Producto implements Serializable {
     @Column(name = "stock")
     private Integer stock;
 
-    @Column(name = "imagen_url", length = 500)
-    private String imagen_url;
+    @Column(name = "imagen")
+    private byte[] imagen;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "proveedor_id")
     private Proveedor proveedor;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
+
     // Constructor, getters y setters
     public Producto() {
     }
 
-    public Producto(String nombre, String marca, String talla, String descripcion, Double precio, Integer stock, Proveedor proveedor, Categoria categoria,String imagen_url) {
+    public Producto(String nombre, String talla, String descripcion, Double precio, Integer stock, Proveedor proveedor, Categoria categoria, byte[] imagen) {
         this.nombre = nombre;
-        this.marca = marca;
         this.talla = talla;
         this.descripcion = descripcion;
         this.precio = precio;
         this.stock = stock;
-        this.imagen_url = imagen_url;
+        this.imagen = imagen;
         this.proveedor = proveedor;
         this.categoria = categoria;
     }
@@ -76,14 +76,6 @@ public class Producto implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
     }
 
     public String getTalla() {
@@ -118,14 +110,13 @@ public class Producto implements Serializable {
         this.stock = stock;
     }
 
-    public String getImagen_url() {
-        return imagen_url;
+    public byte[] getImagen() {
+        return imagen;
     }
 
-    public void setImagen_url(String imagen_url) {
-        this.imagen_url = imagen_url;
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
     }
-
 
     public Categoria getCategoria() {
         return categoria;
@@ -135,8 +126,6 @@ public class Producto implements Serializable {
         this.categoria = categoria;
     }
 
- 
-
     public Proveedor getProveedor() {
         return proveedor;
     }
@@ -144,9 +133,5 @@ public class Producto implements Serializable {
     public void setProveedor(Proveedor proveedor) {
         this.proveedor = proveedor;
     }
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "categoria_id")
-    private Categoria categoria;
 
 }

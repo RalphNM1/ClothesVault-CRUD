@@ -4,6 +4,9 @@
  */
 package modelo.dao;
 
+import java.util.Iterator;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
 import modelo.vo.Categoria;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -14,12 +17,24 @@ import org.hibernate.query.Query;
  */
 public class categoriaDAO {
 
-    public Categoria buscarProveedor(Session session, String nombre) {
+    public Categoria buscarCategoria(Session session, String nombre) {
         Categoria c = null;
         Query q = session.createQuery("from Categoria c where c.nombre=:nombre");
 
         q.setParameter("nombre", nombre);
         c = (Categoria) q.uniqueResult();
         return c;
+    }
+    
+    public void cargacombo(Session session, DefaultComboBoxModel modelocombo) throws Exception {
+        Categoria p;
+        Query q = session.createQuery("from Categoria p");
+
+        List<Categoria> listaCategorias = q.list();
+        Iterator it = listaCategorias.iterator();
+
+        while (it.hasNext()) {
+            modelocombo.addElement(it.next());
+        }
     }
 }
